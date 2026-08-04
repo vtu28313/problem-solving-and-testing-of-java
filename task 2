@@ -1,0 +1,32 @@
+import java.util.*;
+import java.util.stream.*;
+class SensorReading {
+    String sensorId;
+    double temperature;
+    SensorReading(String sensorId, double temperature) {
+        this.sensorId = sensorId;
+        this.temperature = temperature;
+    }
+    public String getSensorId() {
+        return sensorId;
+    }
+    public double getTemperature() {
+        return temperature;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        List<SensorReading> readings = Arrays.asList(
+            new SensorReading("S1", 60),
+            new SensorReading("S2", 40),
+            new SensorReading("S3", 80),
+            new SensorReading("S1", 70),
+            new SensorReading("S2", 90),
+            new SensorReading("S3", 30)
+        );
+        List<String> activeSensors = readings.stream()
+            .map(SensorReading::getSensorId)
+            .collect(Collectors.toList());
+        System.out.println("Sensors: " + activeSensors);
+    }
+}
