@@ -1,0 +1,4 @@
+Enter DNA sequence: ACGTACGTGAC
+Enter DNA pattern to search: TAC
+Searching for pattern...
+Pattern found at position 3
